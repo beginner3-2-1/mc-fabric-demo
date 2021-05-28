@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "demo",
+  "version": "${version}",
+  "name": "Demo",
+  "description": "测试",
+  "authors": [
+    "beginner321"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/demo/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.beginner321.demo.Demo"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
