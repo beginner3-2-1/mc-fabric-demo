@@ -26,7 +26,7 @@ class Demo : ModInitializer {
         val firstBlock:FirstBlock by lazy {
             FirstBlock()
         }
-        const val NAME_SPACE="demo"
+        const val NAME_SPACE="demo";
     }
 
 
