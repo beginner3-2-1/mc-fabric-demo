@@ -16,6 +16,9 @@
       "com.beginner321.demo.Demo"
     ]
   },
+  "mixins": [
+    "demo.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",

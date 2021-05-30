@@ -10,5 +10,5 @@ import net.minecraft.block.Material
  */
 class FirstBlock(settings : Settings?) : Block(settings)
 {
-    constructor():this(FabricBlockSettings.of(Material.METAL).hardness(4.0f))
+    constructor():this(FabricBlockSettings.of(Material.METAL).hardness(1f))
 }

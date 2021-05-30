@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.beginner321.demo.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "ExampleMixin",
+    "DeadMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
