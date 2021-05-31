@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.event.player.AttackEntityCallback
 import net.minecraft.block.Blocks
 import net.minecraft.block.FireBlock
 import net.minecraft.entity.Entity
+import net.minecraft.entity.EntityType
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
@@ -57,6 +58,10 @@ class Demo : ModInitializer {
 
     private fun registerBlock(){
         Registry.register(Registry.BLOCK, Identifier(NAME_SPACE,"first_block"), firstBlock)
+//        val clazz = Class.forName(EntityType::class.java.name)
+//        clazz.fields.forEach {
+//            println(it.name)
+//        }
     }
 
     private fun registerEvent(){
