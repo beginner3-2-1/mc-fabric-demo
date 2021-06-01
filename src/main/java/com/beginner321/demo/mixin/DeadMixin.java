@@ -1,13 +1,15 @@
 package com.beginner321.demo.mixin;
 
-import com.beginner321.demo.event.DeadCallback;
+import com.alibaba.fastjson.JSON;
+
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.util.ActionResult;
+import net.minecraft.entity.passive.BeeEntity;
+import net.minecraft.tag.ItemTags;
 import net.minecraft.world.World;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,12 +25,11 @@ public abstract class DeadMixin extends Entity{
         super(type, world);
     }
 
-    @Inject(method = "onDeath", at = @At(value = "HEAD"), cancellable = true)
-    private void onDeath(DamageSource source, CallbackInfo ci) {
-        ActionResult result = DeadCallback.EVENT.invoker().interact(source);
-        System.out.println("111111111111 "+super.getName().toString());
-        if(result == ActionResult.FAIL) {
-            ci.cancel();
+    @Inject(method = "onDeath", at = @At(value = "RETURN"), cancellable = true)
+    private void onDeathMixin(DamageSource source, CallbackInfo ci) {
+        if(!world.isClient){
+            System.out.println(source.name);
+            System.out.println(JSON.toJSONString(super.getType()));
         }
     }
 }
