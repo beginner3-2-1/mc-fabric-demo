@@ -7,9 +7,6 @@ import net.minecraft.world.World
 
 class Ghost(entityType: EntityType<out HostileEntity>?, world: World?) : HostileEntity(entityType, world) {
 
-    override fun onDeath(source: DamageSource?) {
-        super.onDeath(source)
-
-    }
+    constructor():this(EntityType.CREEPER,null)
 
 }

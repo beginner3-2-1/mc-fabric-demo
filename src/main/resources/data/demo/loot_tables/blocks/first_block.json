@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "demo:example_block"
+          "name": "demo:first_block"
         }
       ],
       "conditions": [
