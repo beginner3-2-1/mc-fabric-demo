@@ -1,0 +1,8 @@
+{
+  "parent": "demo:block/second_block_side",
+  "textures": {
+    "bottom": "demo:block/second_block",
+    "top": "demo:block/second_block",
+    "side": "demo:block/second_block"
+  }
+}
