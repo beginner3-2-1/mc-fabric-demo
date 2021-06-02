@@ -1,20 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "WWW",
-    "WR ",
-    "WWW"
-  ],
-  "key": {
-    "W": {
-      "tag": "minecraft:logs"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    }
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "demo:first_block"
   },
-  "result": {
-    "item": "demo:first_item",
-    "count": 4
-  }
+  "result":  "demo:first_item",
+  "experience": 10.0,
+  "cookingtime": 100
 }

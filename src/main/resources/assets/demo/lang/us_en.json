@@ -1,5 +1,8 @@
 {
   "itemGroup.demo.group": "Demo",
   "item.demo.first_item": "first item",
+  "item.demo.first_item.tooltip": "first item tip %d",
+  "item.demo.first_item.tooltip_1": "first item tip1",
+  "item.demo.first_item.tooltip_2": "first item tip2",
   "block.demo.first_block": "first_block"
 }
