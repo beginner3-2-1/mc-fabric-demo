@@ -2,6 +2,7 @@ package com.beginner321.demo
 
 import com.beginner321.demo.block.FirstBlock
 import com.beginner321.demo.block.SecondBlock
+import com.beginner321.demo.block.ThirdBlock
 import com.beginner321.demo.items.FirstItem
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
@@ -39,6 +40,9 @@ class Demo : ModInitializer {
         val secondBlock:SecondBlock by lazy {
             SecondBlock()
         }
+        val thirdBlock:ThirdBlock by lazy {
+            ThirdBlock()
+        }
         const val NAME_SPACE="demo"
     }
 
@@ -60,11 +64,14 @@ class Demo : ModInitializer {
                 Item.Settings().group(ITEM_GROUP)))
         Registry.register(Registry.ITEM, Identifier(NAME_SPACE,"second_block"),BlockItem(secondBlock,
                 Item.Settings().group(ITEM_GROUP)))
+        Registry.register(Registry.ITEM, Identifier(NAME_SPACE,"third_block"),BlockItem(thirdBlock,
+                Item.Settings().group(ITEM_GROUP)))
     }
 
     private fun registerBlock(){
         Registry.register(Registry.BLOCK, Identifier(NAME_SPACE,"first_block"), firstBlock)
         Registry.register(Registry.BLOCK, Identifier(NAME_SPACE,"second_block"), secondBlock)
+        Registry.register(Registry.BLOCK, Identifier(NAME_SPACE,"third_block"), thirdBlock)
     }
 
     private fun registerEvent(){

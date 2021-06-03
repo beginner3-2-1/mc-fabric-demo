@@ -16,7 +16,7 @@ import net.minecraft.world.BlockView
  *  @author beginner
  *  2021/6/2 17:17
  */
-class SecondBlock(settings : Settings?) : HorizontalFacingBlock(settings)
+open class SecondBlock(settings : Settings?) : HorizontalFacingBlock(settings)
 {
     constructor() : this(FabricBlockSettings.of(Material.METAL).hardness(1f))
 

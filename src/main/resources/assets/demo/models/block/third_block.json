@@ -1,0 +1,7 @@
+{
+  "parent": "demo:block/third_block_side",
+  "textures": {
+    "bottom": "minecraft:block/stone",
+    "top": "minecraft:block/oak_log"
+  }
+}
