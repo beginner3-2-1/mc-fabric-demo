@@ -1,3 +1,6 @@
 {
-  "parent": "demo:block/second_block"
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "demo:block/second_block"
+  }
 }

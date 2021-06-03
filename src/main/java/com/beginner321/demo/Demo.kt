@@ -3,26 +3,21 @@ package com.beginner321.demo
 import com.beginner321.demo.block.FirstBlock
 import com.beginner321.demo.block.SecondBlock
 import com.beginner321.demo.block.ThirdBlock
+import com.beginner321.demo.block.entity.FirstBlockEntity
 import com.beginner321.demo.items.FirstItem
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback
 import net.minecraft.block.Blocks
-import net.minecraft.block.FireBlock
-import net.minecraft.entity.Entity
-import net.minecraft.entity.EntityType
-import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.block.entity.BeehiveBlockEntity
+import net.minecraft.block.entity.BlockEntityType
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
 import net.minecraft.util.ActionResult
-import net.minecraft.util.Hand
 import net.minecraft.util.Identifier
-import net.minecraft.util.hit.EntityHitResult
 import net.minecraft.util.registry.Registry
-import net.minecraft.world.World
-import org.apache.http.client.entity.EntityBuilder
 import java.util.function.Supplier
 
 class Demo : ModInitializer {
@@ -44,6 +39,8 @@ class Demo : ModInitializer {
             ThirdBlock()
         }
         const val NAME_SPACE="demo"
+
+        lateinit var FIRST_BLOCK_ENTITY:BlockEntityType<FirstBlockEntity>
     }
 
 
@@ -72,6 +69,9 @@ class Demo : ModInitializer {
         Registry.register(Registry.BLOCK, Identifier(NAME_SPACE,"first_block"), firstBlock)
         Registry.register(Registry.BLOCK, Identifier(NAME_SPACE,"second_block"), secondBlock)
         Registry.register(Registry.BLOCK, Identifier(NAME_SPACE,"third_block"), thirdBlock)
+
+        FIRST_BLOCK_ENTITY=Registry.register(Registry.BLOCK_ENTITY_TYPE,"demo:first_block_entity",
+            BlockEntityType.Builder.create({ FirstBlockEntity() }, thirdBlock).build(null))
     }
 
     private fun registerEvent(){

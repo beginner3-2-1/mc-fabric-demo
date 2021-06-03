@@ -1,7 +1,9 @@
 package com.beginner321.demo.block
 
+import com.beginner321.demo.block.entity.FirstBlockEntity
 import net.fabricmc.fabric.api.`object`.builder.v1.block.FabricBlockSettings
 import net.minecraft.block.*
+import net.minecraft.block.entity.BlockEntity
 import net.minecraft.item.ItemPlacementContext
 import net.minecraft.state.StateManager
 import net.minecraft.state.property.Properties
@@ -15,7 +17,7 @@ import net.minecraft.world.BlockView
  *  @author beginner
  *  2021/6/3 11:29
  */
-class ThirdBlock(settings : Settings?) : Block(settings)
+class ThirdBlock(settings : Settings?) : BlockEntityProvider,Block(settings)
 {
     constructor() : this(FabricBlockSettings.of(Material.STONE).hardness(1f))
 
@@ -71,4 +73,11 @@ class ThirdBlock(settings : Settings?) : Block(settings)
         }
         return super.getOutlineShape(state , world , pos , context)
     }
+
+    override fun createBlockEntity(world: BlockView?): BlockEntity {
+        return FirstBlockEntity()
+    }
+
+
+
 }
